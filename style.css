@@ -212,6 +212,7 @@ a {
 
 @media (min-width: 90em) {
   .main {
+    max-height: 100vh;
     padding: 0 20%;
   }
 
@@ -272,9 +273,9 @@ a {
     margin-top: 1.5rem;
   }
 
-  /* .question__btn {
+  .question__btn {
     font-size: 0.85rem;
-  } */
+  }
 
   .answer__list {
     margin-bottom: 0;
