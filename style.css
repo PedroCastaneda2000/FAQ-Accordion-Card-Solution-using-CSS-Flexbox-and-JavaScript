@@ -61,7 +61,7 @@ a {
 .main {
   background: linear-gradient(var(--bg-soft-Violet), var(--bg-soft-Blue));
   height: 100vh;
-  max-height: 100vh;
+  /* max-height: 100vh; */
 
   display: flex;
   justify-content: center;
@@ -261,7 +261,7 @@ a {
     width: 50%;
     height: 100%;
     padding: 0;
-    margin-bottom: 15%;
+    margin-bottom: 25%;
   }
 
   .answer__list.active {
