@@ -4,6 +4,7 @@
   /* POSITION BOTTOM VALUE */
   --image-woman-bottom: 72.5%;
   --image-pattern-bottom: 68.5%;
+
   /* --image-woman-bottom2: 73.5%;
   --image-pattern-bottom2: 63.5%; */
 
@@ -61,7 +62,7 @@ a {
 .main {
   background: linear-gradient(var(--bg-soft-Violet), var(--bg-soft-Blue));
   height: 100vh;
-  /* max-height: 100vh; */
+  max-height: 100vh;
 
   display: flex;
   justify-content: center;
@@ -261,7 +262,7 @@ a {
     width: 50%;
     height: 100%;
     padding: 0;
-    margin-bottom: 25%;
+    margin-bottom: 10%;
   }
 
   .answer__list.active {
@@ -272,9 +273,9 @@ a {
     margin-top: 1.5rem;
   }
 
-  .question__btn {
+  /* .question__btn {
     font-size: 0.85rem;
-  }
+  } */
 
   .answer__list {
     margin-bottom: 0;
