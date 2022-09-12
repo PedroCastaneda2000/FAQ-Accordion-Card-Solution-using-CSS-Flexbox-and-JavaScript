@@ -79,7 +79,7 @@ function elementChecker (checkingElement, originalElement, currentElement) {
   })
 }
 
-// The imageToggle function will toggle (go up and down) the mobileImage base on the status of the questions. 
+// The elementToggle function will toggle (go up and down) the mobileImage and other elements base on the status of the questions. 
 function elementToggle (checkingElement, originalElement, currentElement) {
   for (let k = 0; k < originalElement.length; k++) {
     for (let v = 0; v < originalElement.length; v++) {
