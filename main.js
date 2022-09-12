@@ -1,7 +1,11 @@
-const questionBtn = document.querySelectorAll("#question-btn")
-const answerList = document.querySelectorAll("#answer-list")
-const arrowDown = document.querySelectorAll("#arrow-down")
-const questionCont = document.querySelectorAll("#question-container") 
+const questionCont = document.querySelectorAll("[data-question-container]") 
+const questionBtn = document.querySelectorAll("[data-question-btn]")
+const answerList = document.querySelectorAll("[data-answer-list]")
+const arrowDown = document.querySelectorAll("[data-arrow-down]")
+// const questionCont = document.querySelectorAll("#question-container") 
+// const questionBtn = document.querySelectorAll("#question-btn")
+// const answerList = document.querySelectorAll("#answer-list")
+// const arrowDown = document.querySelectorAll("#arrow-down")
 
 let currentQuestion
 let checkingQuestion
@@ -15,7 +19,7 @@ let checkingArrow
 let currentCont
 let checkingCont
 
-let mobileImage = document.querySelectorAll("#mobile-image")
+let mobileImage = document.querySelectorAll("[data-mobile-image]")
 
 let openQuestions = 0
 let closedQuestions = 0
@@ -31,10 +35,10 @@ document.addEventListener("click", e => {
     mobileImage[i].classList.add("active")
   }
 
-  currentQuestion = e.target.closest("#question-btn");
+  currentQuestion = e.target.closest("[data-question-btn]");
   currentQuestion.classList.toggle("active");
 
-  checkingQuestion = document.querySelectorAll("#question-btn.active")
+  checkingQuestion = document.querySelectorAll("[data-question-btn].active")
 
   imageToggle(checkingQuestion, questionBtn)
   
@@ -46,7 +50,7 @@ document.addEventListener("click", e => {
       currentAnswer = answerList[j]
       currentAnswer.classList.toggle("active")
 
-      checkingAnswer = document.querySelectorAll("#answer-list.active")
+      checkingAnswer = document.querySelectorAll("[data-answer-list].active")
 
       elementChecker(checkingAnswer, answerList, currentAnswer)
       
@@ -54,7 +58,7 @@ document.addEventListener("click", e => {
       currentArrow = arrowDown[j]
       currentArrow.classList.toggle("active")
 
-      checkingArrow = document.querySelectorAll("#arrow-down.active")
+      checkingArrow = document.querySelectorAll("[data-arrow-down].active")
 
       elementChecker(checkingArrow, arrowDown, currentArrow)
 
@@ -62,7 +66,7 @@ document.addEventListener("click", e => {
       currentCont = questionCont[j]
       currentCont.classList.toggle("active")
 
-      checkingCont = document.querySelectorAll("#question-container.active")
+      checkingCont = document.querySelectorAll("[data-question-container].active")
 
       elementChecker(checkingCont, questionCont, currentCont)
     }  

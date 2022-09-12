@@ -1,7 +1,12 @@
-const detailsCont = document.querySelectorAll("#details-container")
-const questionSum = document.querySelectorAll("#question-summary") 
-const questionContent = document.querySelectorAll("#question-content")
-const arrowDown = document.querySelectorAll("#arrow-down")
+// const detailsCont = document.querySelectorAll("#details-container")
+// const questionSum = document.querySelectorAll("#question-summary") 
+// const questionContent = document.querySelectorAll("#question-content")
+// const arrowDown = document.querySelectorAll("#arrow-down")
+
+const detailsCont = document.querySelectorAll("[data-details-container]")
+const questionSum = document.querySelectorAll("[data-question-summary]") 
+const questionContent = document.querySelectorAll("[data-question-content]")
+const arrowDown = document.querySelectorAll("[data-arrow-down]")
 
 let currentDetails
 let checkingDetails
@@ -12,7 +17,7 @@ let checkingSum
 let currentQuestion
 let checkingQuestion
 
-let mobileImage = document.querySelectorAll("#mobile-image")
+let mobileImage = document.querySelectorAll("[data-mobile-image]")
 
 let openQuestions = 0
 let closedQuestions = 0
@@ -24,9 +29,9 @@ document.addEventListener("click", e => {
     mobileImage[i].classList.add("active")
   }
   // Details
-  currentDetails = e.target.closest("#details-container");
+  currentDetails = e.target.closest("[data-details-container]");
   currentDetails.classList.toggle("active");
-  checkingDetails = document.querySelectorAll("#details-container.active")
+  checkingDetails = document.querySelectorAll("[data-details-container].active")
 
   elementChecker(checkingDetails, detailsCont, currentDetails)
   
@@ -36,25 +41,25 @@ document.addEventListener("click", e => {
       //SUMMARY
       currentSum = questionSum[j]
       currentSum.classList.add("active")
-      checkingSum = document.querySelectorAll("#question-summary.active")
+      checkingSum = document.querySelectorAll("[data-question-summary].active")
 
       elementChecker(checkingSum, questionSum, currentSum)
       
       // QUESTIONS
       currentQuestion = questionContent[j]
       currentQuestion.classList.add("active")
-      checkingQuestion = document.querySelectorAll("#question-content.active")
+      checkingQuestion = document.querySelectorAll("[data-question-content].active")
 
       elementChecker(checkingQuestion, questionSum, currentQuestion)
 
       // ARROW
       currentArrow = arrowDown[j]
       currentArrow.classList.add("active")
-      checkingArrow = document.querySelectorAll("#arrow-down.active")
+      checkingArrow = document.querySelectorAll("[data-arrow-down].active")
 
       elementChecker(checkingArrow, arrowDown, currentArrow)
 
-      elementToggle(checkingDetails, detailsCont)
+      elementToggle(checkingDetails, detailsCont, currentDetails)
     }
   }
 })
@@ -75,7 +80,7 @@ function elementChecker (checkingElement, originalElement, currentElement) {
 }
 
 // The imageToggle function will toggle (go up and down) the mobileImage base on the status of the questions. 
-function elementToggle (checkingElement, originalElement) {
+function elementToggle (checkingElement, originalElement, currentElement) {
   for (let k = 0; k < originalElement.length; k++) {
     for (let v = 0; v < originalElement.length; v++) {
       if (checkingElement[k] === originalElement[v]){
@@ -102,6 +107,9 @@ function elementToggle (checkingElement, originalElement) {
       currentSum.classList.remove("active")
       currentQuestion.classList.remove("active")
       currentArrow.classList.remove("active")
+
+      currentElement.classList.remove("active")
+      currentElement.open = false
     }
     return
   }
